@@ -4,7 +4,8 @@
 
 Veil Pierce AI reads a corporate registry the way a financial crime investigator would. It resolves who is who across millions of hand typed filings, joins the public register to leaked offshore records and sanctions lists in one knowledge graph, finds the structures that are used to hide the real owner of a company, and writes a dossier in which every sentence cites the record it came from.
 
-![Architecture](docs/figures/architecture.png)
+<img width="1599" height="676" alt="architecture" src="https://github.com/user-attachments/assets/bb83709f-135a-4e6a-831d-de37e4fecd50" />
+
 
 ## Project brief
 
@@ -35,7 +36,8 @@ The benchmark registry holds **1,069,722 records**: 250,000 companies, 391,066 o
 <tr><td>Fabricated claims injected to test the verifier, and rejected</td><td>12,422 and 12,400</td></tr>
 </table>
 
-![Precision and recall curves](docs/figures/detection_pr_curves.png)
+<img width="1095" height="866" alt="detection_pr_curves" src="https://github.com/user-attachments/assets/975938d9-d9d5-40d8-adeb-c291893e33aa" />
+
 
 These figures measure how well the pipeline recovers structure that was planted in synthetic data, through realistic noise. They are not an estimate of performance on a live register. The section on limitations explains what that distinction means and why the benchmark is built this way.
 
@@ -43,11 +45,13 @@ These figures measure how well the pipeline recovers structure that was planted 
 
 A rule that says "review any director with more than 25 appointments" sounds sensible and fails in practice, because a prolific nominee never files under one spelling. In the benchmark the 28 planted nominees hold between 40 and 400 appointments each. Grouping by exact name and birth month sees on average only **42 percent** of the appointments of each nominee as belonging to one identity. After entity resolution the figure is **97 percent**. Across the whole register, exact matching splits 154,202 real people into 320,104 apparent identities and recovers 34 percent of the true record pairs. Entity resolution produces 152,837 identities and recovers 98 percent of pairs at 99.1 percent precision.
 
-![Nominee resolution](docs/figures/nominee_resolution_uplift.png)
+<img width="997" height="773" alt="nominee_resolution_uplift" src="https://github.com/user-attachments/assets/07942439-d927-45be-8946-9aa6d624af25" />
+
 
 The business consequence is that an appointment threshold applied to raw data gives a false sense of coverage. Removing entity resolution from the pipeline drops nominee recall from 0.97 to 0.76, and the nominees it misses are the ones who vary their filings most.
 
-![Nominee network](docs/figures/case_nominee_network.png)
+<img width="1272" height="1097" alt="case_nominee_network" src="https://github.com/user-attachments/assets/438f3769-707a-4959-a4fc-b1ac1b733865" />
+
 
 ### Finding two: what an address does matters, not how full it is
 
@@ -55,43 +59,50 @@ Flagging crowded addresses is the other common starting point. It alerts on ever
 
 None of that works without address resolution. One planted building appears under an average of **152 different spellings** in the raw data, so the largest group under any single spelling holds 14 percent of its companies. On raw address strings the same detector finds 12 percent of the factory companies.
 
-![Address factory](docs/figures/case_address_factory.png)
+<img width="1308" height="1243" alt="case_address_factory" src="https://github.com/user-attachments/assets/32c98e9d-2493-4d56-b003-834aea2d80d6" />
+
 
 ### Finding three: some structures exist only when datasets are joined
 
 A loop of ownership is a structural fact and is found exactly, by computing strongly connected components. The detector recovers 1,280 of the 1,296 planted loop companies with no false positives. A third of the loops pass through an offshore entity: the UK register shows only that the company is controlled by something overseas, and the leak data shows only that a UK company is a shareholder of an offshore entity. Neither dataset contains a loop. Without the leak edges recall falls to 0.62.
 
-![Circular ownership](docs/figures/case_circular_ownership.png)
+<img width="1272" height="1054" alt="case_circular_ownership" src="https://github.com/user-attachments/assets/e8e0abe9-4016-493b-ae4e-121a330952f8" />
+
 
 ### Finding four: sanctions exposure is a path, and screening names does not walk it
 
 Screening company names and their direct officers against the list reaches 31 percent of the companies that are truly exposed. The rest sit behind an offshore entity or a chain of subsidiaries. Following the direction of control for up to four steps from every screened match raises recall to **96 percent**, and recall holds at every distance.
 
-![Sanctions recall by hop](docs/figures/sanctions_recall_by_hop.png)
+<img width="1055" height="687" alt="sanctions_recall_by_hop" src="https://github.com/user-attachments/assets/f669473a-af92-422b-83e0-a74f1808bd3a" />
+
 
 Precision is the cost, and the project reports it plainly: 0.66 at company level. The false alerts are not noise from the graph. Almost all of the 156 falsely alerted companies have a director or hidden controller with the same name as a listed person and a birth date that the list cannot rule out, or a name only match where one side has no birth date at all. No data in the register can separate those people from a designated party, which is why the system splits its screening alerts into two tiers. Among screened parties, confirmed matches (name and birth date agree) are right 85 percent of the time. Potential matches are right 42 percent of the time, are capped below the confirmed level, and every dossier that rests on one says so in its finding and routes it to manual review. Replacing this logic with exact name matching and no birth date check produces 1,128 false alerts and precision of 0.17.
 
 The same effect shows at the very top of the ranking. Of the 100 companies with the highest fused score, 20 are false alerts, and every one of them is a company whose director or controller has the full name of a listed person and a recorded birth date that agrees with the list entry. A reviewer can clear such a case in minutes with a second identifier. No model working from the register alone can.
 
-![Sanctions path](docs/figures/case_sanctions_path.png)
+<img width="1531" height="708" alt="case_sanctions_path" src="https://github.com/user-attachments/assets/4f6aa4b2-c4f0-4728-9e37-b0166e601b40" />
+
 
 ### Finding five: opaque is not the same as suspicious
 
 A company with a corporate owner and no named person is opaque. So is every subsidiary of a listed multinational. Flagging all of them yields precision of 0.69. Weighting the jurisdictions on the chain and checking whether the company files real accounts brings precision to 1.00 at recall 0.99. Where the leak names a person behind an offshore owner that the register leaves blank, the dossier says so and labels it as an unverified lead.
 
-![Opaque chain](docs/figures/case_opaque_chain.png)
+<img width="1167" height="1058" alt="case_opaque_chain" src="https://github.com/user-attachments/assets/49cf3248-90b4-472b-b597-10b2a32955a3" />
+
 
 ### Finding six: every capability earns its place
 
 Each row below removes one capability and leaves everything else unchanged.
 
-![Ablation study](docs/figures/ablation_study.png)
+<img width="1723" height="755" alt="ablation_study" src="https://github.com/user-attachments/assets/da17b362-d9e7-42ec-83ee-5ee79d83ee67" />
+
 
 ### Finding seven: the verifier catches what a narrator gets wrong, including this one
 
 1,782 dossiers were written and all 15,616 of their claims were checked against the evidence they cite. Then 12,422 false claims of seven kinds were built from genuine ones and passed to the verifier, which rejected **99.8 percent**. The only kind that slips through is an altered number that happens to equal another number in the cited evidence.
 
-![Verifier test](docs/figures/verifier_fabrication_test.png)
+<img width="1474" height="658" alt="verifier_fabrication_test" src="https://github.com/user-attachments/assets/c5882a26-6a9b-432e-a1a3-03aea6044f7e" />
+
 
 The verifier also proved its worth during development. The offline composer once wrote that a company sat on "a loop with 7 links". The count was correct, and it appeared in no evidence item, so the verifier rejected the sentence. The fix was to add the count to the evidence. That is the behaviour the design intends: a statement that cannot be traced to a record does not reach a reviewer, even when it is true and even when the system itself wrote it.
 
@@ -103,11 +114,13 @@ A real register has no labels, so the headline score is a transparent fusion of 
 
 That result needs a caution. Planted structure is far easier to learn than real concealment, so the number of cases a firm would need in practice is much larger. What the study offers is the method: keep the rules as the champion, train the challenger on confirmed outcomes as they accumulate, and switch when it wins out of fold on your own cases.
 
-![Label budget](docs/figures/label_budget.png)
+<img width="1079" height="748" alt="label_budget" src="https://github.com/user-attachments/assets/28708229-9ac6-4cfe-b2dc-4eeb390f17f1" />
+
 
 ### How the lookalikes fared
 
-![Hard negatives](docs/figures/hard_negative_alert_rates.png)
+<img width="1497" height="635" alt="hard_negative_alert_rates" src="https://github.com/user-attachments/assets/29c91d7b-de9f-44b4-a17b-9d9b94a5f4ff" />
+
 
 ## Business insight
 
@@ -122,7 +135,8 @@ That result needs a caution. Planted structure is far easier to learn than real 
 
 The matrix has three parts: how each fraud vector is detected, which controls apply and what risk remains, and the risks of the language model system itself. It is stored as data in `veilpierce/knowledge/mitigation_matrix.json`, drives the recommended controls in every dossier, and is rendered in full in [docs/mitigation_matrix.md](docs/mitigation_matrix.md).
 
-![Mitigation matrix heatmap](docs/figures/mitigation_matrix_heatmap.png)
+<img width="1305" height="1068" alt="mitigation_matrix_heatmap" src="https://github.com/user-attachments/assets/9c49cadc-a2c5-46b0-acb5-3b95f18b315e" />
+
 
 Likelihood and impact use a 1 to 5 scale. Residual values assume the listed controls operate as designed. Scores are a starting position for a deploying institution to recalibrate. Risk is written as likelihood x impact.
 
@@ -179,7 +193,8 @@ Likelihood and impact use a 1 to 5 scale. Residual values assume the listed cont
 
 Retrieval quality was measured on both indexes. On 48 analyst style questions the hybrid typology index reaches a mean reciprocal rank of 0.925 against 0.922 for BM25 alone and 0.904 for the dense channel alone. Name lookup was tested with 1,000 noisy queries against an index of 525,195 names. There the character channel alone finds the right entity first 91 percent of the time, exact matching 23 percent, and fusing in a word channel made results worse (69 percent), so name lookup uses the character channel. Fusion is not always an improvement, and both results are reported.
 
-![Retrieval quality](docs/figures/retrieval_quality.png)
+<img width="1957" height="674" alt="retrieval_quality" src="https://github.com/user-attachments/assets/4e0b5631-ca66-4262-8295-4d2580f8f4f3" />
+
 
 ### An excerpt from a generated dossier
 
@@ -331,7 +346,8 @@ Complete tables for every stage are in [docs/results.md](docs/results.md). The d
 <tr><td>Burst incorporation and phoenix activity</td><td>2,467</td><td>2,461</td><td>0</td><td>6</td><td>1.000</td><td>0.998</td></tr>
 </table>
 
-![Typology precision and recall](docs/figures/typology_precision_recall.png)
+<img width="1269" height="730" alt="typology_precision_recall" src="https://github.com/user-attachments/assets/518ee224-3a48-42c2-ab53-2fcf1b9a8cce" />
+
 
 Runtime of the benchmark by stage, on two CPU cores:
 
