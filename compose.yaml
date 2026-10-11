@@ -1,0 +1,6 @@
+services:
+  veilpierce:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      VEILPIERCE_LLM_PROVIDER: offline
