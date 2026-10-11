@@ -1,0 +1,668 @@
+{
+  "questions": [
+    {
+      "question": "Who ultimately controls LUDLOW TAXIS INTERNATIONAL LIMITED?",
+      "company_number": "12374602",
+      "company_name": "LUDLOW TAXIS INTERNATIONAL LIMITED",
+      "answer": [
+        {
+          "text": "VIOLET WASTE EXPRESS LIMITED (company 07740361) is recorded as a corporate controller of LUDLOW TAXIS INTERNATIONAL LIMITED (company 12374602): ownership of shares 75 to 100 percent; filed as VIOLET WASTE EXPRESS LIMITED; resolved by registration number, notified 20 Apr 2021. Link confidence 1.00.",
+          "citations": [
+            "E05"
+          ]
+        },
+        {
+          "text": "WESTBROOK LANTERN CYCLES INC (offshore entity 81001683, Mauritius) is recorded as a corporate controller of VIOLET WASTE EXPRESS LIMITED (company 07740361): ownership of shares 75 to 100 percent; filed as WESTBROOK LANTERN CYCLES INC; resolved by name and jurisdiction, notified 17 Aug 2020. Link confidence 1.00.",
+          "citations": [
+            "E06"
+          ]
+        },
+        {
+          "text": "Leak data records ATLAS ROBOTICS COLLECTIVE LIMITED (company 15531012) as shareholder of WESTBROOK LANTERN CYCLES INC (offshore entity 81001683, Mauritius). The leak officer was matched to the UK company by name.",
+          "citations": [
+            "E07"
+          ]
+        },
+        {
+          "text": "PENNINE WIRELESS DEVELOPMENTS LIMITED (company 10697355) is recorded as a corporate controller of ATLAS ROBOTICS COLLECTIVE LIMITED (company 15531012): ownership of shares 75 to 100 percent; filed as PENNINE WIRELESS DEVELOPMENTS LIMITED; resolved by registration number, notified 06 Apr 2016. Link confidence 1.00.",
+          "citations": [
+            "E08"
+          ]
+        },
+        {
+          "text": "LUDLOW TAXIS INTERNATIONAL LIMITED (company 12374602) is recorded as a corporate controller of PENNINE WIRELESS DEVELOPMENTS LIMITED (company 10697355): ownership of shares 75 to 100 percent; filed as LUDLOW TAXIS INTERNATIONAL LIMITED; resolved by registration number, notified 10 Sep 2026. Link confidence 1.00.",
+          "citations": [
+            "E09"
+          ]
+        },
+        {
+          "text": "Fang Kang Li (person 4466, born Nov 1973), usual residence England, is recorded as director of LUDLOW TAXIS INTERNATIONAL LIMITED (company 12374602), appointed 18 Mar 2023.",
+          "citations": [
+            "E03"
+          ]
+        },
+        {
+          "text": "Circular ownership (score 0.95). The company sits on a closed loop of declared control with 5 links: LUDLOW TAXIS INTERNATIONAL LIMITED, which controls PENNINE WIRELESS DEVELOPMENTS LIMITED, which controls ATLAS ROBOTICS COLLECTIVE LIMITED, which controls WESTBROOK LANTERN CYCLES INC, which controls VIOLET WASTE EXPRESS LIMITED, which controls LUDLOW TAXIS INTERNATIONAL LIMITED. No natural person appears on the loop.",
+          "citations": [
+            "E09",
+            "E08",
+            "E07",
+            "E06",
+            "E05",
+            "E10",
+            "M01"
+          ]
+        },
+        {
+          "text": "Opaque offshore ownership (score 0.65). The declared chain of control reaches no natural person. It ends at WESTBROOK LANTERN CYCLES INC, registered in Mauritius.",
+          "citations": [
+            "E06",
+            "E07",
+            "E11",
+            "M01"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "M01",
+          "text": "Deterministic detectors give LUDLOW TAXIS INTERNATIONAL LIMITED (company 12374602) a fused risk score of 0.96, band Critical. Typology scores: Nominee director network 0.00; Mass registration address 0.00; Circular ownership 0.95; Sanctions proximity 0.00; Opaque offshore ownership 0.65; Burst incorporation and phoenix activity 0.00. Typologies triggered (2): Circular ownership, Opaque offshore ownership.",
+          "source": "Veil Pierce AI detectors"
+        },
+        {
+          "id": "E03",
+          "text": "Fang Kang Li (person 4466, born Nov 1973), usual residence England, is recorded as director of LUDLOW TAXIS INTERNATIONAL LIMITED (company 12374602), appointed 18 Mar 2023.",
+          "source": "officer register, appointment 15874"
+        },
+        {
+          "id": "E05",
+          "text": "VIOLET WASTE EXPRESS LIMITED (company 07740361) is recorded as a corporate controller of LUDLOW TAXIS INTERNATIONAL LIMITED (company 12374602): ownership of shares 75 to 100 percent; filed as VIOLET WASTE EXPRESS LIMITED; resolved by registration number, notified 20 Apr 2021. Link confidence 1.00.",
+          "source": "control register, control record 13940"
+        },
+        {
+          "id": "E06",
+          "text": "WESTBROOK LANTERN CYCLES INC (offshore entity 81001683, Mauritius) is recorded as a corporate controller of VIOLET WASTE EXPRESS LIMITED (company 07740361): ownership of shares 75 to 100 percent; filed as WESTBROOK LANTERN CYCLES INC; resolved by name and jurisdiction, notified 17 Aug 2020. Link confidence 1.00.",
+          "source": "control register, control record 13941"
+        },
+        {
+          "id": "E07",
+          "text": "Leak data records ATLAS ROBOTICS COLLECTIVE LIMITED (company 15531012) as shareholder of WESTBROOK LANTERN CYCLES INC (offshore entity 81001683, Mauritius). The leak officer was matched to the UK company by name.",
+          "source": "offshore leak data"
+        },
+        {
+          "id": "E08",
+          "text": "PENNINE WIRELESS DEVELOPMENTS LIMITED (company 10697355) is recorded as a corporate controller of ATLAS ROBOTICS COLLECTIVE LIMITED (company 15531012): ownership of shares 75 to 100 percent; filed as PENNINE WIRELESS DEVELOPMENTS LIMITED; resolved by registration number, notified 06 Apr 2016. Link confidence 1.00.",
+          "source": "control register, control record 13942"
+        },
+        {
+          "id": "E09",
+          "text": "LUDLOW TAXIS INTERNATIONAL LIMITED (company 12374602) is recorded as a corporate controller of PENNINE WIRELESS DEVELOPMENTS LIMITED (company 10697355): ownership of shares 75 to 100 percent; filed as LUDLOW TAXIS INTERNATIONAL LIMITED; resolved by registration number, notified 10 Sep 2026. Link confidence 1.00.",
+          "source": "control register, control record 13939"
+        },
+        {
+          "id": "E10",
+          "text": "The shortest loop of declared control through company 12374602 has 5 links. No natural person appears on it.",
+          "source": "strongly connected component analysis"
+        },
+        {
+          "id": "E11",
+          "text": "Walking up the control records from company 12374602 finds no natural person within 8 steps. The longest chain of corporate owners above it has 8 link(s) and the highest jurisdiction opacity weight on the chain is 0.60.",
+          "source": "ownership chain analysis"
+        }
+      ],
+      "verification": {
+        "claims": 14,
+        "supported": 14,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by name match with similarity 1.00"
+    },
+    {
+      "question": "Is there any sanctions exposure for company 12374602?",
+      "company_number": "12374602",
+      "company_name": "LUDLOW TAXIS INTERNATIONAL LIMITED",
+      "answer": [
+        {
+          "text": "No sanctions proximity finding was triggered for this company within the configured number of control steps.",
+          "citations": [
+            "M01"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "M01",
+          "text": "Deterministic detectors give LUDLOW TAXIS INTERNATIONAL LIMITED (company 12374602) a fused risk score of 0.96, band Critical. Typology scores: Nominee director network 0.00; Mass registration address 0.00; Circular ownership 0.95; Sanctions proximity 0.00; Opaque offshore ownership 0.65; Burst incorporation and phoenix activity 0.00. Typologies triggered (2): Circular ownership, Opaque offshore ownership.",
+          "source": "Veil Pierce AI detectors"
+        }
+      ],
+      "verification": {
+        "claims": 14,
+        "supported": 14,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by company number in the question"
+    },
+    {
+      "question": "Who ultimately controls HORIZON SEAFOOD SERVICES LIMITED?",
+      "company_number": "05232218",
+      "company_name": "HORIZON SEAFOOD SERVICES LIMITED",
+      "answer": [
+        {
+          "text": "SUMMIT KENDAL LETTINGS INVESTMENTS LTD (offshore entity 81000291, Anguilla) is recorded as a corporate controller of HORIZON SEAFOOD SERVICES LIMITED (company 05232218): ownership of shares 75 to 100 percent; filed as SUMMIT KENDAL LETTINGS INVESTMENTS LTD; resolved by name and jurisdiction, notified 27 Nov 2024. Link confidence 1.00.",
+          "citations": [
+            "E04"
+          ]
+        },
+        {
+          "text": "Leak data records KINGFISHER TEAL FINANCE LTD (offshore entity 81000316, British Virgin Islands) as shareholder of SUMMIT KENDAL LETTINGS INVESTMENTS LTD (offshore entity 81000291, Anguilla).",
+          "citations": [
+            "E05"
+          ]
+        },
+        {
+          "text": "Leak data records Hannah Rachel Macleod (leak data officer 91000161) as beneficiary of SUMMIT KENDAL LETTINGS INVESTMENTS LTD (offshore entity 81000291, Anguilla).",
+          "citations": [
+            "E06"
+          ]
+        },
+        {
+          "text": "Sanjay Qureshi Desai (person 267, born Aug 1959), usual residence United Arab Emirates, is recorded as director of HORIZON SEAFOOD SERVICES LIMITED (company 05232218), appointed 27 Nov 2024.",
+          "citations": [
+            "E03"
+          ]
+        },
+        {
+          "text": "Opaque offshore ownership (score 0.97). The declared chain of control reaches no natural person. It ends at KINGFISHER TEAL FINANCE LTD, registered in British Virgin Islands. Leak data names Hannah Rachel Macleod behind the offshore owner, which the register does not show.",
+          "citations": [
+            "E04",
+            "E05",
+            "E06",
+            "E09",
+            "M01"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "M01",
+          "text": "Deterministic detectors give HORIZON SEAFOOD SERVICES LIMITED (company 05232218) a fused risk score of 0.99, band Critical. Typology scores: Nominee director network 0.95; Mass registration address 0.90; Circular ownership 0.00; Sanctions proximity 0.00; Opaque offshore ownership 0.97; Burst incorporation and phoenix activity 0.00. Typologies triggered (3): Nominee director network, Mass registration address, Opaque offshore ownership.",
+          "source": "Veil Pierce AI detectors"
+        },
+        {
+          "id": "E03",
+          "text": "Sanjay Qureshi Desai (person 267, born Aug 1959), usual residence United Arab Emirates, is recorded as director of HORIZON SEAFOOD SERVICES LIMITED (company 05232218), appointed 27 Nov 2024.",
+          "source": "officer register, appointment 2409"
+        },
+        {
+          "id": "E04",
+          "text": "SUMMIT KENDAL LETTINGS INVESTMENTS LTD (offshore entity 81000291, Anguilla) is recorded as a corporate controller of HORIZON SEAFOOD SERVICES LIMITED (company 05232218): ownership of shares 75 to 100 percent; filed as SUMMIT KENDAL LETTINGS INVESTMENTS LTD; resolved by name and jurisdiction, notified 27 Nov 2024. Link confidence 1.00.",
+          "source": "control register, control record 2284"
+        },
+        {
+          "id": "E05",
+          "text": "Leak data records KINGFISHER TEAL FINANCE LTD (offshore entity 81000316, British Virgin Islands) as shareholder of SUMMIT KENDAL LETTINGS INVESTMENTS LTD (offshore entity 81000291, Anguilla).",
+          "source": "offshore leak data"
+        },
+        {
+          "id": "E06",
+          "text": "Leak data records Hannah Rachel Macleod (leak data officer 91000161) as beneficiary of SUMMIT KENDAL LETTINGS INVESTMENTS LTD (offshore entity 81000291, Anguilla).",
+          "source": "offshore leak data"
+        },
+        {
+          "id": "E09",
+          "text": "Walking up the control records from company 05232218 finds no natural person within 8 steps. The longest chain of corporate owners above it has 2 link(s) and the highest jurisdiction opacity weight on the chain is 0.90.",
+          "source": "ownership chain analysis"
+        }
+      ],
+      "verification": {
+        "claims": 13,
+        "supported": 13,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by name match with similarity 1.00"
+    },
+    {
+      "question": "Is there any sanctions exposure for company 05232218?",
+      "company_number": "05232218",
+      "company_name": "HORIZON SEAFOOD SERVICES LIMITED",
+      "answer": [
+        {
+          "text": "No sanctions proximity finding was triggered for this company within the configured number of control steps.",
+          "citations": [
+            "M01"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "M01",
+          "text": "Deterministic detectors give HORIZON SEAFOOD SERVICES LIMITED (company 05232218) a fused risk score of 0.99, band Critical. Typology scores: Nominee director network 0.95; Mass registration address 0.90; Circular ownership 0.00; Sanctions proximity 0.00; Opaque offshore ownership 0.97; Burst incorporation and phoenix activity 0.00. Typologies triggered (3): Nominee director network, Mass registration address, Opaque offshore ownership.",
+          "source": "Veil Pierce AI detectors"
+        }
+      ],
+      "verification": {
+        "claims": 13,
+        "supported": 13,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by company number in the question"
+    },
+    {
+      "question": "Who ultimately controls KENDAL GARDENS NETWORK LTD?",
+      "company_number": "11764177",
+      "company_name": "KENDAL GARDENS NETWORK LTD",
+      "answer": [
+        {
+          "text": "KELVIN ESTATES INVESTMENTS LIMITED (company 03226446) is recorded as a corporate controller of KENDAL GARDENS NETWORK LTD (company 11764177): ownership of shares 75 to 100 percent; filed as KELVIN ESTATES INVESTMENTS LTD; resolved by exact name, notified 13 Apr 2023. Link confidence 1.00.",
+          "citations": [
+            "E05"
+          ]
+        },
+        {
+          "text": "FOXGLOVE STORAGE EXPRESS LTD (company 09414431) is recorded as a corporate controller of KELVIN ESTATES INVESTMENTS LIMITED (company 03226446): ownership of shares 75 to 100 percent; filed as Foxglove Storage Express Ltd; resolved by registration number, notified 16 Aug 2024. Link confidence 1.00.",
+          "citations": [
+            "E06"
+          ]
+        },
+        {
+          "text": "ENVOY UNITY SIGNAGE INVESTMENTS LTD (offshore entity 81001876, Anguilla) is recorded as a corporate controller of FOXGLOVE STORAGE EXPRESS LTD (company 09414431): ownership of shares 75 to 100 percent; filed as ENVOY UNITY SIGNAGE INVESTMENTS LTD; resolved by name and jurisdiction, notified 06 Apr 2016. Link confidence 1.00.",
+          "citations": [
+            "E07"
+          ]
+        },
+        {
+          "text": "Leak data records Elena Vladislav Kowalski (leak data officer 91001200) as shareholder of ENVOY UNITY SIGNAGE INVESTMENTS LTD (offshore entity 81001876, Anguilla).",
+          "citations": [
+            "E08"
+          ]
+        },
+        {
+          "text": "Graham Richard Macleod (person 5312, born Sep 1969), usual residence England, is recorded as director of KENDAL GARDENS NETWORK LTD (company 11764177), appointed 13 Apr 2023.",
+          "citations": [
+            "E03"
+          ]
+        },
+        {
+          "text": "Charlotte Thackeray Gallagher (person 5313, born Apr 2001), usual residence Scotland, is recorded as director of KENDAL GARDENS NETWORK LTD (company 11764177), appointed 13 Apr 2023.",
+          "citations": [
+            "E04"
+          ]
+        },
+        {
+          "text": "Opaque offshore ownership (score 0.80). The declared chain of control reaches no natural person. It ends at ENVOY UNITY SIGNAGE INVESTMENTS LTD, registered in Anguilla. Leak data names Elena Vladislav Kowalski behind the offshore owner, which the register does not show.",
+          "citations": [
+            "E07",
+            "E08",
+            "E11",
+            "M01"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "M01",
+          "text": "Deterministic detectors give KENDAL GARDENS NETWORK LTD (company 11764177) a fused risk score of 0.79, band High. Typology scores: Nominee director network 0.00; Mass registration address 0.00; Circular ownership 0.00; Sanctions proximity 0.34; Opaque offshore ownership 0.80; Burst incorporation and phoenix activity 0.00. Typologies triggered (2): Sanctions proximity, Opaque offshore ownership.",
+          "source": "Veil Pierce AI detectors"
+        },
+        {
+          "id": "E03",
+          "text": "Graham Richard Macleod (person 5312, born Sep 1969), usual residence England, is recorded as director of KENDAL GARDENS NETWORK LTD (company 11764177), appointed 13 Apr 2023.",
+          "source": "officer register, appointment 17479"
+        },
+        {
+          "id": "E04",
+          "text": "Charlotte Thackeray Gallagher (person 5313, born Apr 2001), usual residence Scotland, is recorded as director of KENDAL GARDENS NETWORK LTD (company 11764177), appointed 13 Apr 2023.",
+          "source": "officer register, appointment 17480"
+        },
+        {
+          "id": "E05",
+          "text": "KELVIN ESTATES INVESTMENTS LIMITED (company 03226446) is recorded as a corporate controller of KENDAL GARDENS NETWORK LTD (company 11764177): ownership of shares 75 to 100 percent; filed as KELVIN ESTATES INVESTMENTS LTD; resolved by exact name, notified 13 Apr 2023. Link confidence 1.00.",
+          "source": "control register, control record 15189"
+        },
+        {
+          "id": "E06",
+          "text": "FOXGLOVE STORAGE EXPRESS LTD (company 09414431) is recorded as a corporate controller of KELVIN ESTATES INVESTMENTS LIMITED (company 03226446): ownership of shares 75 to 100 percent; filed as Foxglove Storage Express Ltd; resolved by registration number, notified 16 Aug 2024. Link confidence 1.00.",
+          "source": "control register, control record 15188"
+        },
+        {
+          "id": "E07",
+          "text": "ENVOY UNITY SIGNAGE INVESTMENTS LTD (offshore entity 81001876, Anguilla) is recorded as a corporate controller of FOXGLOVE STORAGE EXPRESS LTD (company 09414431): ownership of shares 75 to 100 percent; filed as ENVOY UNITY SIGNAGE INVESTMENTS LTD; resolved by name and jurisdiction, notified 06 Apr 2016. Link confidence 1.00.",
+          "source": "control register, control record 15187"
+        },
+        {
+          "id": "E08",
+          "text": "Leak data records Elena Vladislav Kowalski (leak data officer 91001200) as shareholder of ENVOY UNITY SIGNAGE INVESTMENTS LTD (offshore entity 81001876, Anguilla).",
+          "source": "offshore leak data"
+        },
+        {
+          "id": "E11",
+          "text": "Walking up the control records from company 11764177 finds no natural person within 8 steps. The longest chain of corporate owners above it has 3 link(s) and the highest jurisdiction opacity weight on the chain is 0.80.",
+          "source": "ownership chain analysis"
+        }
+      ],
+      "verification": {
+        "claims": 13,
+        "supported": 13,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by name match with similarity 1.00"
+    },
+    {
+      "question": "Is there any sanctions exposure for company 11764177?",
+      "company_number": "11764177",
+      "company_name": "KENDAL GARDENS NETWORK LTD",
+      "answer": [
+        {
+          "text": "Sanctions proximity (score 0.34). The company is 4 control steps downstream of Elena Vladislav Kowalski, which matches sanctions list entry Elana Vladislav Kowalsci with score 0.80. The match is a potential match that needs manual review.",
+          "citations": [
+            "E09",
+            "E08",
+            "E07",
+            "E06",
+            "E05",
+            "E10",
+            "M01"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "M01",
+          "text": "Deterministic detectors give KENDAL GARDENS NETWORK LTD (company 11764177) a fused risk score of 0.79, band High. Typology scores: Nominee director network 0.00; Mass registration address 0.00; Circular ownership 0.00; Sanctions proximity 0.34; Opaque offshore ownership 0.80; Burst incorporation and phoenix activity 0.00. Typologies triggered (2): Sanctions proximity, Opaque offshore ownership.",
+          "source": "Veil Pierce AI detectors"
+        },
+        {
+          "id": "E05",
+          "text": "KELVIN ESTATES INVESTMENTS LIMITED (company 03226446) is recorded as a corporate controller of KENDAL GARDENS NETWORK LTD (company 11764177): ownership of shares 75 to 100 percent; filed as KELVIN ESTATES INVESTMENTS LTD; resolved by exact name, notified 13 Apr 2023. Link confidence 1.00.",
+          "source": "control register, control record 15189"
+        },
+        {
+          "id": "E06",
+          "text": "FOXGLOVE STORAGE EXPRESS LTD (company 09414431) is recorded as a corporate controller of KELVIN ESTATES INVESTMENTS LIMITED (company 03226446): ownership of shares 75 to 100 percent; filed as Foxglove Storage Express Ltd; resolved by registration number, notified 16 Aug 2024. Link confidence 1.00.",
+          "source": "control register, control record 15188"
+        },
+        {
+          "id": "E07",
+          "text": "ENVOY UNITY SIGNAGE INVESTMENTS LTD (offshore entity 81001876, Anguilla) is recorded as a corporate controller of FOXGLOVE STORAGE EXPRESS LTD (company 09414431): ownership of shares 75 to 100 percent; filed as ENVOY UNITY SIGNAGE INVESTMENTS LTD; resolved by name and jurisdiction, notified 06 Apr 2016. Link confidence 1.00.",
+          "source": "control register, control record 15187"
+        },
+        {
+          "id": "E08",
+          "text": "Leak data records Elena Vladislav Kowalski (leak data officer 91001200) as shareholder of ENVOY UNITY SIGNAGE INVESTMENTS LTD (offshore entity 81001876, Anguilla).",
+          "source": "offshore leak data"
+        },
+        {
+          "id": "E09",
+          "text": "Sanctions screening: Elena Vladislav Kowalski (leak data officer 91001200) matches Elana Vladislav Kowalsci (list entry SAN000103, regime Counter Terrorism (International)) with score 0.80. Basis: review; no date of birth on source; list name Elena Vladislav Kowalsci.",
+          "source": "sanctions screening"
+        },
+        {
+          "id": "E10",
+          "text": "Company 11764177 is 4 control steps downstream of Elena Vladislav Kowalski (leak data officer 91001200), which matches Elana Vladislav Kowalsci (list entry SAN000103, regime Counter Terrorism (International)) with score 0.80. The match is a potential match that needs manual review. At least one link on the path is control by office or an unquantified leak record, so effective ownership cannot be computed.",
+          "source": "downstream control search"
+        }
+      ],
+      "verification": {
+        "claims": 13,
+        "supported": 13,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by company number in the question"
+    },
+    {
+      "question": "Who ultimately controls KENDAL TRAINING HOUSE LIMITED?",
+      "company_number": "11596945",
+      "company_name": "KENDAL TRAINING HOUSE LIMITED",
+      "answer": [
+        {
+          "text": "No person with significant control is recorded for company 11596945.",
+          "citations": [
+            "E04"
+          ]
+        },
+        {
+          "text": "Fiona Clarke Pemberton (person 767, born Dec 1952), usual residence Panama, is recorded as director of KENDAL TRAINING HOUSE LIMITED (company 11596945), appointed 02 Feb 2023.",
+          "citations": [
+            "E03"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "E03",
+          "text": "Fiona Clarke Pemberton (person 767, born Dec 1952), usual residence Panama, is recorded as director of KENDAL TRAINING HOUSE LIMITED (company 11596945), appointed 02 Feb 2023.",
+          "source": "officer register, appointment 6826"
+        },
+        {
+          "id": "E04",
+          "text": "No person with significant control is recorded for company 11596945.",
+          "source": "control register"
+        }
+      ],
+      "verification": {
+        "claims": 9,
+        "supported": 9,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by name match with similarity 1.00"
+    },
+    {
+      "question": "Is there any sanctions exposure for company 11596945?",
+      "company_number": "11596945",
+      "company_name": "KENDAL TRAINING HOUSE LIMITED",
+      "answer": [
+        {
+          "text": "No sanctions proximity finding was triggered for this company within the configured number of control steps.",
+          "citations": [
+            "M01"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "M01",
+          "text": "Deterministic detectors give KENDAL TRAINING HOUSE LIMITED (company 11596945) a fused risk score of 0.97, band Critical. Typology scores: Nominee director network 0.94; Mass registration address 0.92; Circular ownership 0.00; Sanctions proximity 0.00; Opaque offshore ownership 0.00; Burst incorporation and phoenix activity 0.00. Typologies triggered (2): Nominee director network, Mass registration address.",
+          "source": "Veil Pierce AI detectors"
+        }
+      ],
+      "verification": {
+        "claims": 9,
+        "supported": 9,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by company number in the question"
+    },
+    {
+      "question": "Who ultimately controls ARDEN MOTORS COLLECTIVE LIMITED?",
+      "company_number": "10771743",
+      "company_name": "ARDEN MOTORS COLLECTIVE LIMITED",
+      "answer": [
+        {
+          "text": "RIVERSIDE DERWENT AGRI HOLDINGS LTD (offshore entity 81001214, British Virgin Islands) is recorded as a corporate controller of ARDEN MOTORS COLLECTIVE LIMITED (company 10771743): ownership of shares 75 to 100 percent; filed as RIVERSIDE DERWENT AGRI HOLDINGS LTD; resolved by name and jurisdiction, notified 27 Dec 2021. Link confidence 1.00.",
+          "citations": [
+            "E04"
+          ]
+        },
+        {
+          "text": "Leak data records WHITBY BOREAL BUILDERS HOLDINGS LTD (offshore entity 81001251, Panama) as shareholder of RIVERSIDE DERWENT AGRI HOLDINGS LTD (offshore entity 81001214, British Virgin Islands).",
+          "citations": [
+            "E05"
+          ]
+        },
+        {
+          "text": "Leak data records Reza Khalid Ahmadi (leak data officer 91000700) as beneficiary of RIVERSIDE DERWENT AGRI HOLDINGS LTD (offshore entity 81001214, British Virgin Islands).",
+          "citations": [
+            "E06"
+          ]
+        },
+        {
+          "text": "Peter Smith Hughes (person 2361, born Oct 1980), usual residence Belize, is recorded as director of ARDEN MOTORS COLLECTIVE LIMITED (company 10771743), appointed 27 Dec 2021.",
+          "citations": [
+            "E03"
+          ]
+        },
+        {
+          "text": "Opaque offshore ownership (score 0.97). The declared chain of control reaches no natural person. It ends at RIVERSIDE DERWENT AGRI HOLDINGS LTD, registered in British Virgin Islands. Leak data names Reza Khalid Ahmadi behind the offshore owner, which the register does not show.",
+          "citations": [
+            "E04",
+            "E05",
+            "E06",
+            "E08",
+            "M01"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "M01",
+          "text": "Deterministic detectors give ARDEN MOTORS COLLECTIVE LIMITED (company 10771743) a fused risk score of 0.94, band Critical. Typology scores: Nominee director network 0.00; Mass registration address 0.78; Circular ownership 0.00; Sanctions proximity 0.00; Opaque offshore ownership 0.97; Burst incorporation and phoenix activity 0.00. Typologies triggered (2): Mass registration address, Opaque offshore ownership.",
+          "source": "Veil Pierce AI detectors"
+        },
+        {
+          "id": "E03",
+          "text": "Peter Smith Hughes (person 2361, born Oct 1980), usual residence Belize, is recorded as director of ARDEN MOTORS COLLECTIVE LIMITED (company 10771743), appointed 27 Dec 2021.",
+          "source": "officer register, appointment 10731"
+        },
+        {
+          "id": "E04",
+          "text": "RIVERSIDE DERWENT AGRI HOLDINGS LTD (offshore entity 81001214, British Virgin Islands) is recorded as a corporate controller of ARDEN MOTORS COLLECTIVE LIMITED (company 10771743): ownership of shares 75 to 100 percent; filed as RIVERSIDE DERWENT AGRI HOLDINGS LTD; resolved by name and jurisdiction, notified 27 Dec 2021. Link confidence 1.00.",
+          "source": "control register, control record 9851"
+        },
+        {
+          "id": "E05",
+          "text": "Leak data records WHITBY BOREAL BUILDERS HOLDINGS LTD (offshore entity 81001251, Panama) as shareholder of RIVERSIDE DERWENT AGRI HOLDINGS LTD (offshore entity 81001214, British Virgin Islands).",
+          "source": "offshore leak data"
+        },
+        {
+          "id": "E06",
+          "text": "Leak data records Reza Khalid Ahmadi (leak data officer 91000700) as beneficiary of RIVERSIDE DERWENT AGRI HOLDINGS LTD (offshore entity 81001214, British Virgin Islands).",
+          "source": "offshore leak data"
+        },
+        {
+          "id": "E08",
+          "text": "Walking up the control records from company 10771743 finds no natural person within 8 steps. The longest chain of corporate owners above it has 2 link(s) and the highest jurisdiction opacity weight on the chain is 0.90.",
+          "source": "ownership chain analysis"
+        }
+      ],
+      "verification": {
+        "claims": 11,
+        "supported": 11,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by name match with similarity 1.00"
+    },
+    {
+      "question": "Is there any sanctions exposure for company 10771743?",
+      "company_number": "10771743",
+      "company_name": "ARDEN MOTORS COLLECTIVE LIMITED",
+      "answer": [
+        {
+          "text": "No sanctions proximity finding was triggered for this company within the configured number of control steps.",
+          "citations": [
+            "M01"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "M01",
+          "text": "Deterministic detectors give ARDEN MOTORS COLLECTIVE LIMITED (company 10771743) a fused risk score of 0.94, band Critical. Typology scores: Nominee director network 0.00; Mass registration address 0.78; Circular ownership 0.00; Sanctions proximity 0.00; Opaque offshore ownership 0.97; Burst incorporation and phoenix activity 0.00. Typologies triggered (2): Mass registration address, Opaque offshore ownership.",
+          "source": "Veil Pierce AI detectors"
+        }
+      ],
+      "verification": {
+        "claims": 11,
+        "supported": 11,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by company number in the question"
+    },
+    {
+      "question": "Who ultimately controls NEXUS MOTORS DEPOT GROUP LTD?",
+      "company_number": "06116950",
+      "company_name": "NEXUS MOTORS DEPOT GROUP LTD",
+      "answer": [
+        {
+          "text": "Helen Evans Turner (person 10206, born Aug 1977) is recorded as a person with significant control of NEXUS MOTORS DEPOT GROUP LTD (company 06116950): ownership of shares 75 to 100 percent, notified 06 Apr 2022.",
+          "citations": [
+            "E05"
+          ]
+        },
+        {
+          "text": "Helen Evans Turner (person 10206, born Aug 1977), usual residence England, is recorded as director of NEXUS MOTORS DEPOT GROUP LTD (company 06116950), appointed 31 May 2024.",
+          "citations": [
+            "E03"
+          ]
+        },
+        {
+          "text": "Alan Matthew Hughes (person 10207, born Oct 1989), usual residence United Kingdom, is recorded as director of NEXUS MOTORS DEPOT GROUP LTD (company 06116950), appointed 06 Apr 2022.",
+          "citations": [
+            "E04"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "E03",
+          "text": "Helen Evans Turner (person 10206, born Aug 1977), usual residence England, is recorded as director of NEXUS MOTORS DEPOT GROUP LTD (company 06116950), appointed 31 May 2024.",
+          "source": "officer register, appointment 27433"
+        },
+        {
+          "id": "E04",
+          "text": "Alan Matthew Hughes (person 10207, born Oct 1989), usual residence United Kingdom, is recorded as director of NEXUS MOTORS DEPOT GROUP LTD (company 06116950), appointed 06 Apr 2022.",
+          "source": "officer register, appointment 27435"
+        },
+        {
+          "id": "E05",
+          "text": "Helen Evans Turner (person 10206, born Aug 1977) is recorded as a person with significant control of NEXUS MOTORS DEPOT GROUP LTD (company 06116950): ownership of shares 75 to 100 percent, notified 06 Apr 2022.",
+          "source": "control register, control record 21979"
+        }
+      ],
+      "verification": {
+        "claims": 8,
+        "supported": 8,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by name match with similarity 1.00"
+    },
+    {
+      "question": "Is there any sanctions exposure for company 06116950?",
+      "company_number": "06116950",
+      "company_name": "NEXUS MOTORS DEPOT GROUP LTD",
+      "answer": [
+        {
+          "text": "No sanctions proximity finding was triggered for this company within the configured number of control steps.",
+          "citations": [
+            "M01"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "M01",
+          "text": "Deterministic detectors give NEXUS MOTORS DEPOT GROUP LTD (company 06116950) a fused risk score of 0.68, band High. Typology scores: Nominee director network 0.00; Mass registration address 0.00; Circular ownership 0.00; Sanctions proximity 0.00; Opaque offshore ownership 0.00; Burst incorporation and phoenix activity 0.85. Typologies triggered (1): Burst incorporation and phoenix activity.",
+          "source": "Veil Pierce AI detectors"
+        }
+      ],
+      "verification": {
+        "claims": 8,
+        "supported": 8,
+        "supported_ratio": 1.0,
+        "rejected": []
+      },
+      "note": "company found by company number in the question"
+    }
+  ]
+}
