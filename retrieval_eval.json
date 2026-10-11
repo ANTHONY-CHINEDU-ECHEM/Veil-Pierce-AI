@@ -1,0 +1,297 @@
+{
+ "note": "Analyst style questions with the typology cards a reviewer would expect to see.",
+ "queries": [
+  {
+   "query": "one person is director of hundreds of dormant companies",
+   "relevant": [
+    "T01"
+   ]
+  },
+  {
+   "query": "the listed owner is a relative with no business background",
+   "relevant": [
+    "T02"
+   ]
+  },
+  {
+   "query": "same director appears under slightly different spellings",
+   "relevant": [
+    "T03"
+   ]
+  },
+  {
+   "query": "why do exact name counts miss prolific directors",
+   "relevant": [
+    "T03"
+   ]
+  },
+  {
+   "query": "thousands of firms registered at a single office",
+   "relevant": [
+    "T04"
+   ]
+  },
+  {
+   "query": "how do I tell an accountant's office from a shell factory",
+   "relevant": [
+    "T05"
+   ]
+  },
+  {
+   "query": "the occupier says the company has nothing to do with their premises",
+   "relevant": [
+    "T06"
+   ]
+  },
+  {
+   "query": "registrar moved the company to a default address",
+   "relevant": [
+    "T06"
+   ]
+  },
+  {
+   "query": "company A is owned by B which is owned by A",
+   "relevant": [
+    "T07"
+   ]
+  },
+  {
+   "query": "ownership loop that passes through a BVI company",
+   "relevant": [
+    "T08"
+   ]
+  },
+  {
+   "query": "five holding companies stacked above the trading business",
+   "relevant": [
+    "T09"
+   ]
+  },
+  {
+   "query": "what counts as ownership or control by a sanctioned individual",
+   "relevant": [
+    "T10"
+   ]
+  },
+  {
+   "query": "two listed shareholders each hold thirty percent",
+   "relevant": [
+    "T11"
+   ]
+  },
+  {
+   "query": "do we add up stakes held by different designated people",
+   "relevant": [
+    "T11"
+   ]
+  },
+  {
+   "query": "name spelled differently from the list but same birth date",
+   "relevant": [
+    "T12"
+   ]
+  },
+  {
+   "query": "surname and first name are the other way round on the list",
+   "relevant": [
+    "T12"
+   ]
+  },
+  {
+   "query": "match on name with no date of birth available",
+   "relevant": [
+    "T13"
+   ]
+  },
+  {
+   "query": "can a Seychelles company be the registered controller",
+   "relevant": [
+    "T14"
+   ]
+  },
+  {
+   "query": "the only controller is an international business company",
+   "relevant": [
+    "T14"
+   ]
+  },
+  {
+   "query": "small company says nobody has significant control",
+   "relevant": [
+    "T15"
+   ]
+  },
+  {
+   "query": "leaked files name a beneficiary that the register does not show",
+   "relevant": [
+    "T16"
+   ]
+  },
+  {
+   "query": "is being named in an offshore leak proof of wrongdoing",
+   "relevant": [
+    "T16"
+   ]
+  },
+  {
+   "query": "subsidiary of a listed German group with no individual owner",
+   "relevant": [
+    "T17"
+   ]
+  },
+  {
+   "query": "new company with nearly the same name after the old one was struck off",
+   "relevant": [
+    "T18"
+   ]
+  },
+  {
+   "query": "director keeps dissolving companies and starting again",
+   "relevant": [
+    "T18"
+   ]
+  },
+  {
+   "query": "twelve companies formed on the same day by one man",
+   "relevant": [
+    "T19"
+   ]
+  },
+  {
+   "query": "developer set up one company per plot",
+   "relevant": [
+    "T20"
+   ]
+  },
+  {
+   "query": "can we rely on the public register alone to identify owners",
+   "relevant": [
+    "T21"
+   ]
+  },
+  {
+   "query": "what must a bank do to understand who owns a corporate customer",
+   "relevant": [
+    "T21"
+   ]
+  },
+  {
+   "query": "our findings differ from what the register shows about the owner",
+   "relevant": [
+    "T22"
+   ]
+  },
+  {
+   "query": "when do we have to tell the National Crime Agency",
+   "relevant": [
+    "T23"
+   ]
+  },
+  {
+   "query": "can we tell the customer we filed a report",
+   "relevant": [
+    "T23"
+   ]
+  },
+  {
+   "query": "how much weight should an automated alert carry",
+   "relevant": [
+    "T24"
+   ]
+  },
+  {
+   "query": "partnership whose partners are offshore companies",
+   "relevant": [
+    "T25"
+   ]
+  },
+  {
+   "query": "sole director resident abroad on every company",
+   "relevant": [
+    "T01",
+    "T04"
+   ]
+  },
+  {
+   "query": "companies die within two years and never file accounts at one address",
+   "relevant": [
+    "T04"
+   ]
+  },
+  {
+   "query": "waves of incorporations at the same building",
+   "relevant": [
+    "T04",
+    "T19"
+   ]
+  },
+  {
+   "query": "designated person sits two layers above the company",
+   "relevant": [
+    "T10"
+   ]
+  },
+  {
+   "query": "entity not on the list but controlled by someone who is",
+   "relevant": [
+    "T10"
+   ]
+  },
+  {
+   "query": "fuzzy matching creates too many false alerts",
+   "relevant": [
+    "T12",
+    "T13"
+   ]
+  },
+  {
+   "query": "no natural person anywhere in the declared chain",
+   "relevant": [
+    "T14",
+    "T07"
+   ]
+  },
+  {
+   "query": "structure has no commercial reason for its complexity",
+   "relevant": [
+    "T09"
+   ]
+  },
+  {
+   "query": "front person cannot explain the business",
+   "relevant": [
+    "T02"
+   ]
+  },
+  {
+   "query": "virtual office with many overseas clients",
+   "relevant": [
+    "T05"
+   ]
+  },
+  {
+   "query": "reuse of a prohibited company name after liquidation",
+   "relevant": [
+    "T18"
+   ]
+  },
+  {
+   "query": "names that share a common stem and no accounts",
+   "relevant": [
+    "T19"
+   ]
+  },
+  {
+   "query": "who should confirm a finding before we act",
+   "relevant": [
+    "T24"
+   ]
+  },
+  {
+   "query": "verify the listing status of the parent",
+   "relevant": [
+    "T17"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,268 @@
+{
+ "note": "Likelihood and impact use a 1 to 5 scale. Residual values assume the listed controls operate as designed. Scores are a starting position for a deploying institution to recalibrate.",
+ "fraud_vectors": [
+  {
+   "typology": "nominee",
+   "vector": "Nominee director network",
+   "how_it_works": "One person fronts many disposable companies so the real controllers stay off the record.",
+   "graph_signal": "Resolved person node with a high count of director edges into shell like companies, mostly as sole director.",
+   "detection": "Person entity resolution, then a score built from appointment volume, share of shell like companies and share of sole directorships.",
+   "preventive": "Onboarding rule: enhanced due diligence for any company whose director exceeds the appointment threshold.",
+   "detective": "Weekly rescoring of all resolved directors and alerts on new nominees.",
+   "corrective": "Review every company fronted by the confirmed nominee as one connected case and exit or restrict where control cannot be evidenced.",
+   "owner": "Financial crime operations",
+   "anchor": "MLR 2017 regulations 28 and 33",
+   "kpi": "Recall on planted nominees, share of nominee appointments recovered by resolution",
+   "inherent": [
+    4,
+    4
+   ],
+   "residual": [
+    2,
+    3
+   ]
+  },
+  {
+   "typology": "address_factory",
+   "vector": "Mass registration address",
+   "how_it_works": "A single office hosts hundreds of paper companies that are used briefly and abandoned.",
+   "graph_signal": "Address node with a very large company count where most companies are short lived and directors are overseas.",
+   "detection": "Address resolution across formatting variants, then a behaviour score from early dissolution, missing accounts and overseas directors.",
+   "preventive": "Address risk rating applied at onboarding to every company registered at a flagged address.",
+   "detective": "Monthly rebuild of address statistics with alerts when an address crosses the score threshold.",
+   "corrective": "Bulk review of existing customers at the address and report of suspected false addresses to the registrar.",
+   "owner": "Customer due diligence team",
+   "anchor": "Economic Crime and Corporate Transparency Act 2023 registered office rules",
+   "kpi": "Precision against legitimate agents, companies covered per flagged address",
+   "inherent": [
+    4,
+    3
+   ],
+   "residual": [
+    2,
+    2
+   ]
+  },
+  {
+   "typology": "circular",
+   "vector": "Circular ownership",
+   "how_it_works": "Companies are recorded as controlling each other in a loop so that no natural person is ever named.",
+   "graph_signal": "Strongly connected component of size above one in the ownership graph, including edges through offshore entities.",
+   "detection": "Corporate controller resolution followed by strongly connected component analysis and extraction of the shortest loop as evidence.",
+   "preventive": "Onboarding block until a natural person is evidenced as ultimate owner.",
+   "detective": "Loop detection on every graph rebuild.",
+   "corrective": "Discrepancy report to the registrar and escalation to the nominated officer.",
+   "owner": "Customer due diligence team",
+   "anchor": "Companies Act 2006 Part 21A and MLR 2017 regulation 30A",
+   "kpi": "Loops recovered, loops lost to unresolved corporate links",
+   "inherent": [
+    2,
+    5
+   ],
+   "residual": [
+    1,
+    4
+   ]
+  },
+  {
+   "typology": "sanctions",
+   "vector": "Sanctions exposure through indirect control",
+   "how_it_works": "A designated person controls a company through one or more intermediate entities and under a variant spelling.",
+   "graph_signal": "Directed control path of bounded length from a screened list match to the company.",
+   "detection": "Transliteration aware screening with date of birth logic, then downstream reach along control edges with risk that decays by hop.",
+   "preventive": "Screening of all officers, controllers and upstream entities before onboarding and payment release.",
+   "detective": "Rescreen on every list update and every graph rebuild.",
+   "corrective": "Freeze where ownership or control is established, report to OFSI, manual review for name only matches.",
+   "owner": "Sanctions compliance",
+   "anchor": "Sanctions and Anti Money Laundering Act 2018 and OFSI ownership and control test",
+   "kpi": "Recall by hop distance, false alerts from namesakes, review turnaround",
+   "inherent": [
+    2,
+    5
+   ],
+   "residual": [
+    1,
+    5
+   ]
+  },
+  {
+   "typology": "opaque",
+   "vector": "Opaque offshore ownership",
+   "how_it_works": "The declared controller is a company in a secrecy jurisdiction, so the public chain ends without a person.",
+   "graph_signal": "No natural person reachable upstream through control edges and a high opacity jurisdiction on the chain.",
+   "detection": "Upstream ownership profile with jurisdiction opacity weights, chain depth and filing health, plus leak data as a second lens.",
+   "preventive": "Requirement for certified ownership documents before onboarding any company with an offshore corporate controller.",
+   "detective": "Alerts when a customer adds or changes to an offshore corporate controller.",
+   "corrective": "Enhanced due diligence, discrepancy report and exit where the owner cannot be identified.",
+   "owner": "Customer due diligence team",
+   "anchor": "Companies Act 2006 Part 21A and MLR 2017 regulation 28",
+   "kpi": "Share of opaque chains with an identified natural person after review",
+   "inherent": [
+    4,
+    4
+   ],
+   "residual": [
+    3,
+    3
+   ]
+  },
+  {
+   "typology": "phoenix_burst",
+   "vector": "Burst incorporation and phoenix activity",
+   "how_it_works": "Companies are created in batches and abandoned, or dissolved and reborn under a near identical name.",
+   "graph_signal": "Runs of same director, same address incorporations within days, and dissolved to new company pairs with similar names.",
+   "detection": "Run detection over director and address pairs and name similarity between a dissolved company and its successor.",
+   "preventive": "Onboarding check of dissolved companies linked to each director.",
+   "detective": "Alerts when a customer director forms a new lookalike company.",
+   "corrective": "Link the batch or chain into one case and consider a report to the Insolvency Service.",
+   "owner": "Financial crime operations",
+   "anchor": "Insolvency Act 1986 section 216 and Company Directors Disqualification Act 1986",
+   "kpi": "Batches and chains recovered, false alerts on property vehicle batches",
+   "inherent": [
+    3,
+    3
+   ],
+   "residual": [
+    2,
+    2
+   ]
+  }
+ ],
+ "system_risks": [
+  {
+   "risk": "Fabricated evidence in a narrative",
+   "impact": "A false accusation against a company or person.",
+   "mitigation": "Every narrative claim must cite evidence identifiers. A verifier rejects claims whose entities or numbers do not appear in the cited evidence.",
+   "implemented_in": "veilpierce/rag/verifier.py",
+   "test": "tests/test_verifier.py",
+   "inherent": [
+    4,
+    5
+   ],
+   "residual": [
+    1,
+    4
+   ]
+  },
+  {
+   "risk": "Prompt injection through registry text",
+   "impact": "A hostile company name steers the model to clear the company.",
+   "mitigation": "Registry strings are sanitised and quoted as data, instruction like wording is flagged as a red flag, and the model has no ability to change a score.",
+   "implemented_in": "veilpierce/rag/guard.py",
+   "test": "tests/test_guard.py",
+   "inherent": [
+    3,
+    4
+   ],
+   "residual": [
+    1,
+    2
+   ]
+  },
+  {
+   "risk": "Model decides the verdict",
+   "impact": "Unexplainable and unrepeatable risk decisions.",
+   "mitigation": "Scores come from deterministic detectors. The language model only explains them. A claim that states a different risk band is rejected.",
+   "implemented_in": "veilpierce/detect/engine.py",
+   "test": "tests/test_verifier.py",
+   "inherent": [
+    3,
+    4
+   ],
+   "residual": [
+    1,
+    3
+   ]
+  },
+  {
+   "risk": "False merge in entity resolution",
+   "impact": "An innocent person inherits the appointments of someone else.",
+   "mitigation": "Blocking on month and year of birth, conservative name thresholds, every spelling variant shown in the dossier for human confirmation.",
+   "implemented_in": "veilpierce/resolution/persons.py",
+   "test": "tests/test_resolution.py",
+   "inherent": [
+    3,
+    4
+   ],
+   "residual": [
+    2,
+    3
+   ]
+  },
+  {
+   "risk": "Namesake matched to a sanctions entry",
+   "impact": "An innocent customer is treated as designated.",
+   "mitigation": "Date of birth logic, name only matches capped at review level, dossier wording limited to potential match.",
+   "implemented_in": "veilpierce/resolution/sanctions.py",
+   "test": "tests/test_resolution.py",
+   "inherent": [
+    4,
+    4
+   ],
+   "residual": [
+    2,
+    3
+   ]
+  },
+  {
+   "risk": "Leak data treated as proof",
+   "impact": "Reliance on dated and unverified records.",
+   "mitigation": "Leak edges are labelled by source in every evidence item and the typology library instructs reviewers to verify before acting.",
+   "implemented_in": "veilpierce/rag/graph_retriever.py",
+   "test": "tests/test_rag.py",
+   "inherent": [
+    3,
+    3
+   ],
+   "residual": [
+    2,
+    2
+   ]
+  },
+  {
+   "risk": "Typology knowledge goes stale",
+   "impact": "Reviewers are guided by superseded rules.",
+   "mitigation": "The typology library is a versioned file with named sources. Retrieval quality is measured on every run.",
+   "implemented_in": "veilpierce/knowledge/typologies.json",
+   "test": "tests/test_rag.py",
+   "inherent": [
+    3,
+    3
+   ],
+   "residual": [
+    2,
+    2
+   ]
+  },
+  {
+   "risk": "Personal data exposure",
+   "impact": "Breach of data protection duties.",
+   "mitigation": "Only data that is already public is processed, the service returns dossiers on request rather than in bulk, and no prompt is sent to an external model unless a provider is configured.",
+   "implemented_in": "veilpierce/rag/llm.py",
+   "test": "tests/test_rag.py",
+   "inherent": [
+    3,
+    4
+   ],
+   "residual": [
+    2,
+    3
+   ]
+  },
+  {
+   "risk": "Synthetic benchmark overstates performance",
+   "impact": "Deployment with untested thresholds.",
+   "mitigation": "Hard negatives planted for every typology, results reported per typology with error analysis, loaders provided for the public sources so thresholds can be recalibrated.",
+   "implemented_in": "veilpierce/data/synth.py",
+   "test": "tests/test_synth.py",
+   "inherent": [
+    4,
+    3
+   ],
+   "residual": [
+    3,
+    3
+   ]
+  }
+ ]
+}

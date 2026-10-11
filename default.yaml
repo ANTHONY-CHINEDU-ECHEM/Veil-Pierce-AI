@@ -1,0 +1,110 @@
+# Veil Pierce AI default configuration (packaged with the code).
+# Override any value from the command line as section.key=value,
+# for example: veilpierce benchmark synth.n_companies=50000
+
+synth:
+  n_companies: 250000
+  seed: 7
+  snapshot_date: "2026/09/30"
+
+resolution:
+  surname_similarity: 0.92
+  forename_similarity: 0.88
+  corporate_similarity: 93.0
+  sanctions_threshold: 0.86
+  sanctions_review_threshold: 0.74
+  name_only_cap: 0.8
+
+detect:
+  nominee_min_companies: 25
+  factory_min_companies: 60
+  sanctions_max_hops: 4
+  sanctions_hop_decay: 0.75
+  control_max_depth: 8
+  alert_threshold: 0.5
+
+model:
+  n_folds: 5
+  seed: 11
+
+rag:
+  provider: offline
+  model: ""
+  top_k_typologies: 4
+  max_evidence_items: 40
+
+data_dir: data/generated
+artifact_dir: artifacts
+report_dir: reports
+figure_dir: docs/figures
+
+# Illustrative opacity weights per jurisdiction on a scale of 0 to 1.
+# These are project defaults chosen for demonstration. They are not an
+# official index and should be replaced with the risk appetite of the
+# institution that deploys the system.
+opacity_weights:
+  BRITISH VIRGIN ISLANDS: 0.9
+  SEYCHELLES: 0.9
+  MARSHALL ISLANDS: 0.9
+  NEVIS: 0.9
+  PANAMA: 0.85
+  BELIZE: 0.85
+  SAMOA: 0.85
+  ANGUILLA: 0.8
+  BAHAMAS: 0.8
+  CAYMAN ISLANDS: 0.75
+  UNITED ARAB EMIRATES: 0.7
+  LIECHTENSTEIN: 0.65
+  MAURITIUS: 0.6
+  HONG KONG: 0.55
+  CYPRUS: 0.5
+  JERSEY: 0.5
+  GUERNSEY: 0.5
+  ISLE OF MAN: 0.5
+  LUXEMBOURG: 0.45
+  NETHERLANDS: 0.3
+  IRELAND: 0.3
+  UNITED STATES: 0.25
+  UNITED KINGDOM: 0.2
+  GERMANY: 0.15
+  FRANCE: 0.15
+  JAPAN: 0.15
+  SWEDEN: 0.1
+  CANADA: 0.15
+  AUSTRALIA: 0.15
+
+# Alternative spellings mapped to one canonical jurisdiction name.
+jurisdiction_aliases:
+  BVI: BRITISH VIRGIN ISLANDS
+  VIRGIN ISLANDS BRITISH: BRITISH VIRGIN ISLANDS
+  BRITISH VIRGIN ISLES: BRITISH VIRGIN ISLANDS
+  TORTOLA: BRITISH VIRGIN ISLANDS
+  REPUBLIC OF PANAMA: PANAMA
+  REPUBLIC OF SEYCHELLES: SEYCHELLES
+  MAHE SEYCHELLES: SEYCHELLES
+  REPUBLIC OF THE MARSHALL ISLANDS: MARSHALL ISLANDS
+  ST KITTS AND NEVIS: NEVIS
+  SAINT KITTS AND NEVIS: NEVIS
+  THE BAHAMAS: BAHAMAS
+  COMMONWEALTH OF THE BAHAMAS: BAHAMAS
+  CAYMAN: CAYMAN ISLANDS
+  GRAND CAYMAN: CAYMAN ISLANDS
+  UAE: UNITED ARAB EMIRATES
+  DUBAI: UNITED ARAB EMIRATES
+  RAS AL KHAIMAH: UNITED ARAB EMIRATES
+  HONG KONG SAR: HONG KONG
+  REPUBLIC OF CYPRUS: CYPRUS
+  REPUBLIC OF MAURITIUS: MAURITIUS
+  USA: UNITED STATES
+  UNITED STATES OF AMERICA: UNITED STATES
+  DELAWARE: UNITED STATES
+  UK: UNITED KINGDOM
+  ENGLAND: UNITED KINGDOM
+  ENGLAND AND WALES: UNITED KINGDOM
+  SCOTLAND: UNITED KINGDOM
+  WALES: UNITED KINGDOM
+  NORTHERN IRELAND: UNITED KINGDOM
+  GREAT BRITAIN: UNITED KINGDOM
+  THE NETHERLANDS: NETHERLANDS
+  HOLLAND: NETHERLANDS
+  REPUBLIC OF IRELAND: IRELAND
